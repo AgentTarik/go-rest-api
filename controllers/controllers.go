@@ -3,6 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
+
 	"github.com/AgentTarik/go-rest-api/database"
 	"github.com/AgentTarik/go-rest-api/models"
 	"github.com/gorilla/mux"

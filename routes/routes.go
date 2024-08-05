@@ -2,6 +2,7 @@ package routes
 
 import (
 	"github.com/AgentTarik/go-rest-api/controllers"
+	"github.com/AgentTarik/go-rest-api/middleware"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
@@ -9,6 +10,7 @@ import (
 
 func HandleRequest() {
 	r := mux.NewRouter()
+	r.Use(middleware.ContentTypeMiddleware)
 	r.HandleFunc("/", controllers.Home)
 	r.HandleFunc("/api/personalidades", controllers.TodasPersonalidades).Methods("GET")
 	r.HandleFunc("/api/personalidades/{id}", controllers.RetornaUmaPersonalidade).Methods("GET")
